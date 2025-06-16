@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ASMR 标签词频</title>
+  <!-- 加载 ECharts 库 -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <style>
+    #main {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <!-- 图表容器 -->
+  <div id="main" style="width: 100%; height: 100%;"></div>
+  
+  <script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom, 'dark');
+var option;
+
+option = {
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    top: '5%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: ['40%', '70%'],
+      avoidLabelOverlap: false,
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 40,
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 21, name: '解压' },
+        { value: 11, name: '场景模拟' },
+        { value: 5, name: '耳朵' },
+        { value: 4, name: '治愈' },
+        { value: 4, name: '触发' },
+        { value: 3, name: '木勺' },
+        { value: 3, name: '沉浸' },
+        { value: 3, name: '舒适' },
+        { value: 3, name: '发音' },
+        { value: 2, name: '感受' },
+        { value: 2, name: '放松' },
+        { value: 2, name: '清洁' },
+        { value: 2, name: '香水' },
+        { value: 2, name: '万物' },
+        { value: 2, name: '催眠' },
+        { value: 1, name: '采耳' },
+        { value: 1, name: '拟音' },
+        { value: 1, name: '挖耳勺' },
+        { value: 1, name: '敲击' }
+      ]
+    }
+  ]
+};
+
+option && myChart.setOption(option);
+  </script>
+</body>
+</html>
